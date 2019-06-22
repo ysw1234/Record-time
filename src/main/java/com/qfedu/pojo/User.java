@@ -8,7 +8,34 @@ public class User {
     private String password;
     private String email;
     private String phone;
+    private Integer focuscount;
+    private Integer fanscount;
+    private String headphoto;
 
+
+    public String getHeadphoto() {
+        return headphoto;
+    }
+
+    public void setHeadphoto(String headphoto) {
+        this.headphoto = headphoto;
+    }
+
+    public Integer getFocuscount() {
+        return focuscount;
+    }
+
+    public void setFocuscount(Integer focuscount) {
+        this.focuscount = focuscount;
+    }
+
+    public Integer getFanscount() {
+        return fanscount;
+    }
+
+    public void setFanscount(Integer fanscount) {
+        this.fanscount = fanscount;
+    }
 
     public String getEmail() {
         return email;

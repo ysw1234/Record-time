@@ -3,8 +3,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.qfedu.dao.UserDao">
     <resultMap id="userMap" type="com.qfedu.pojo.User">
-        <id column="username" property="username"></id>
+        <id column="id" property="id"></id>
+        <result column="username" property="username"></result>
         <result column="password" property="password"></result>
+        <result column="phone" property="phone"></result>
+        <result column="email" property="email"></result>
+        <result column="focuscount" property="focuscount"></result>
+        <result column="fanscount" property="fanscount"></result>
+        <result column="headphoto" property="headphoto"></result>
     </resultMap>
 
     <select id="findUser" resultMap="userMap">
@@ -16,6 +22,6 @@
     </select>
 
     <insert id="registerUser" parameterType="com.qfedu.pojo.User">
-        insert into t_user(username,password,email,phone) values(#{username},#{password},#{email},#{phone})
+        insert into t_user(username,password,email,phone,focuscount,fanscount,headphoto) values(#{username},#{password},#{email},#{phone},#{focuscount},#{fanscount},#{headphoto})
     </insert>
 </mapper>

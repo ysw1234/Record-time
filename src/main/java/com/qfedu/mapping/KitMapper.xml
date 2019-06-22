@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.dao.KitDao">
+    <resultMap id="kitMap" type="com.qfedu.pojo.Kit">
+        <id column="id" property="id"></id>
+        <result column="content" property="content"></result>
+        <result column="peoplenum" property="peoplenum"></result>
+        <result column="pic" property="pic"></result>
+    </resultMap>
+
+    <select id="findKitList" resultMap="kitMap">
+        select * from t_kit
+    </select>
+
+</mapper>

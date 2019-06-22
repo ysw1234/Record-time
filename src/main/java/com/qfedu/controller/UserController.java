@@ -34,6 +34,9 @@ public class UserController {
         if(user1 != null){
             return new JsonBean(0,"该用户名已存在");
         }else {
+            user.setFanscount(100);
+            user.setFocuscount(10);
+            user.setHeadphoto("http://ptci3oe9g.bkt.clouddn.com/u=105201544,868720712&fm=26&gp=0.jpg");
             userService.registerUser(user);
             return new JsonBean(1,"注册成功");
         }
