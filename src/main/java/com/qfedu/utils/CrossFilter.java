@@ -23,4 +23,8 @@ public class CrossFilter implements Filter {
 
     }
 
+    public void init1(){
+
+    }
+
 }
