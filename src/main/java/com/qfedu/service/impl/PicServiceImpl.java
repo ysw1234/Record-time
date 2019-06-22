@@ -18,4 +18,9 @@ public class PicServiceImpl implements PicService {
     public List<Pic> findPicShow() {
         return picDao.findPicShow();
     }
+
+    @Override
+    public List<Pic> findCookShow() {
+        return picDao.findCookShow();
+    }
 }

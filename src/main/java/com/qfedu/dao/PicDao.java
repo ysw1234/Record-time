@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface PicDao {
     List<Pic> findPicShow();
+
+    List<Pic> findCookShow();
 }

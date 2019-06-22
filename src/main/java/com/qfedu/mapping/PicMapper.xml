@@ -9,7 +9,11 @@
     </resultMap>
 
     <select id="findPicShow" resultMap="picMap">
-        select * from t_pic
+        select * from t_pic where pictype=1
+    </select>
+
+    <select id="findCookShow" resultMap="picMap">
+        select * from t_pic where pictype=2
     </select>
 
 </mapper>

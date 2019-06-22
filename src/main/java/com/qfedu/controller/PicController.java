@@ -20,4 +20,10 @@ public class PicController {
         List<Pic> list = picService.findPicShow();
         return list;
     }
+
+    @RequestMapping("/cookshow.do")
+    public List<Pic> cookShow(){
+        List<Pic> list = picService.findCookShow();
+        return list;
+    }
 }

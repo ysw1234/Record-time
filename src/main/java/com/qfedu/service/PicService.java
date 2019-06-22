@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface PicService {
     List<Pic> findPicShow();
+
+    List<Pic> findCookShow();
 }
