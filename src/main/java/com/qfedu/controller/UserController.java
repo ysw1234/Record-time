@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -16,8 +18,9 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/login.do")
-    public JsonBean login(String username,String password){
+    public JsonBean login(String username, String password, HttpServletRequest request){
         User user = userService.findUser(username,password);
+        request.getSession().setAttribute("user",user);
         if(user != null){
             return new JsonBean(1,user);
         }else {

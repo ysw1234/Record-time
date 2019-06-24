@@ -8,5 +8,7 @@ import java.util.List;
  * Created by Winchester on 2019/6/22.
  */
 public interface FocusService {
-    List<User> selectAllUser();
+    List<User> selectAllUser(Integer id);
+
+    void addFocus(Integer id,String[] ids);
 }

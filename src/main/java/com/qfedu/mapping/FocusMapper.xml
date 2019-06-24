@@ -10,8 +10,12 @@
 
 
 
-    <select id="selectAllUser" resultMap="com.qfedu.dao.UserDao.userMap">
-        select * from t_user
+    <select id="selectAllUser" parameterType="Integer" resultMap="com.qfedu.dao.UserDao.userMap">
+        select * from t_user where not id = #{id}
     </select>
+
+    <insert id="addFocus" parameterType="Integer">
+        insert into t_focus VALUES (#{uid},#{id})
+    </insert>
 
 </mapper>
