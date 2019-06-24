@@ -1,7 +1,10 @@
 package com.qfedu.controller;
 
+import com.qfedu.pojo.Ariticle;
 import com.qfedu.pojo.User;
 import com.qfedu.service.FocusService;
+import com.qfedu.vo.JsonBean;
+import com.qiniu.util.Json;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,17 +25,28 @@ public class FocusController {
 
     @RequestMapping("/focusMenu.do")
     @ResponseBody
-    public List<User> focusMenu(HttpServletRequest request){
+    public JsonBean focusMenu(Integer id,HttpServletRequest request){
         User user = (User) request.getSession().getAttribute("user");
-        List<User> list = focusService.selectAllUser(user.getId());
-        return list;
+        System.out.println("++++++++"+id);
+        List<User> list = focusService.selectAllUser(id);
+        return new JsonBean(1,list);
     }
 
     @RequestMapping("/addFocus.do")
-    public String addFocus(String[] ids,HttpServletRequest request){
+    @ResponseBody
+    public JsonBean addFocus(String[] ids, HttpServletRequest request){
         User user = (User) request.getSession().getAttribute("user");
         focusService.addFocus(user.getId(),ids);
-        return "redirect:/afterFocus.html";
+        return new JsonBean(1,"添加关注成功");
+    }
+
+    @RequestMapping("/ariticle.do")
+    @ResponseBody
+    public JsonBean selectAllAriticle(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("user");
+        Integer id = user.getId();
+        List<Ariticle> list = focusService.selectAllAriticle(id);
+        return new JsonBean(1,list);
     }
 
 }

@@ -1,8 +1,10 @@
 package com.qfedu.service.impl;
 
 import com.qfedu.dao.FocusDao;
+import com.qfedu.pojo.Ariticle;
 import com.qfedu.pojo.User;
 import com.qfedu.service.FocusService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +15,7 @@ import java.util.List;
 @Service
 public class FocusServiceImpl implements FocusService {
 
+    @Autowired
     private FocusDao focusDao;
 
 
@@ -26,5 +29,10 @@ public class FocusServiceImpl implements FocusService {
         for (String id:ids) {
             focusDao.addFocus(uid,Integer.parseInt(id));
         }
+    }
+
+    @Override
+    public List<Ariticle> selectAllAriticle(Integer id) {
+        return null;
     }
 }
