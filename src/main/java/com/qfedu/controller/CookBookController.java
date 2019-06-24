@@ -2,6 +2,7 @@ package com.qfedu.controller;
 
 import com.qfedu.pojo.CookBook;
 import com.qfedu.service.CookBookService;
+import com.qfedu.vo.JsonBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,8 +17,28 @@ public class CookBookController {
     private CookBookService cookBookService;
 
     @RequestMapping("/cookBookList.do")
-    public List<CookBook> findCook(){
+    public JsonBean findCook(){
         List<CookBook> list = cookBookService.findCook();
-        return list;
+        return new JsonBean(1,list);
     }
+
+    @RequestMapping("/cookBookMain.do")
+    public JsonBean findMain(Integer id){
+        List<CookBook> list = cookBookService.findMain(id);
+        return new JsonBean(1,list);
+    }
+
+    @RequestMapping("/mainCookList.do")
+    public JsonBean findMainCook(){
+        List<CookBook> list = cookBookService.findMainCook();
+        return new JsonBean(1,list);
+    }
+
+    @RequestMapping("/mainCook.do")
+    public JsonBean findCookIntroduce(Integer id){
+        List<CookBook> list = cookBookService.findCookIntroduce(id);
+        return new JsonBean(1,list);
+    }
+
+
 }

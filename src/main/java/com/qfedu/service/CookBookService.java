@@ -7,4 +7,10 @@ import java.util.List;
 
 public interface CookBookService {
     List<CookBook> findCook();
+
+    List<CookBook> findMain(Integer id);
+
+    List<CookBook> findMainCook();
+
+    List<CookBook> findCookIntroduce(Integer id);
 }

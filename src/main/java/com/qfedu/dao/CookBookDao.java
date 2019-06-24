@@ -9,4 +9,10 @@ import java.util.List;
  */
 public interface CookBookDao {
     List<CookBook> findCook();
+
+    List<CookBook> findMain(Integer id);
+
+    List<CookBook> findMainCook();
+
+    List<CookBook> findMainCookIntroduce(Integer id);
 }

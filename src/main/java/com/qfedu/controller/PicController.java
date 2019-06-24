@@ -2,6 +2,8 @@ package com.qfedu.controller;
 
 import com.qfedu.pojo.Pic;
 import com.qfedu.service.PicService;
+import com.qfedu.vo.JsonBean;
+import com.qiniu.util.Json;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,14 +18,14 @@ public class PicController {
     private PicService picService;
 
     @RequestMapping("/picshow.do")
-    public List<Pic> picShow(){
+    public JsonBean picShow(){
         List<Pic> list = picService.findPicShow();
-        return list;
+        return new JsonBean(1,list);
     }
 
     @RequestMapping("/cookshow.do")
-    public List<Pic> cookShow(){
+    public JsonBean cookShow(){
         List<Pic> list = picService.findCookShow();
-        return list;
+        return new JsonBean(1,list);
     }
 }

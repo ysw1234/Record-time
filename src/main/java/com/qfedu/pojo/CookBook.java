@@ -1,5 +1,7 @@
 package com.qfedu.pojo;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2019/6/22 0022.
  */
@@ -9,6 +11,25 @@ public class CookBook {
     private String title;
     private String intro;
     private String pic;
+    private String main;
+    private List<Comment> commentList;
+
+
+    public List<Comment> getCommentList() {
+        return commentList;
+    }
+
+    public void setCommentList(List<Comment> commentList) {
+        this.commentList = commentList;
+    }
+
+    public String getMain() {
+        return main;
+    }
+
+    public void setMain(String main) {
+        this.main = main;
+    }
 
     public Integer getId() {
         return id;

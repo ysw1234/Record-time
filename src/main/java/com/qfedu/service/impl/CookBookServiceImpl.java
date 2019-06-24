@@ -19,4 +19,19 @@ public class CookBookServiceImpl implements CookBookService {
     public List<CookBook> findCook() {
         return cookBookDao.findCook();
     }
+
+    @Override
+    public List<CookBook> findMain(Integer id) {
+        return cookBookDao.findMain(id);
+    }
+
+    @Override
+    public List<CookBook> findMainCook() {
+        return cookBookDao.findMainCook();
+    }
+
+    @Override
+    public List<CookBook> findCookIntroduce(Integer id) {
+        return cookBookDao.findMainCookIntroduce(id);
+    }
 }
