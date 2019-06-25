@@ -25,10 +25,6 @@ public class CookBookServiceImpl implements CookBookService {
         return cookBookDao.findMain(id);
     }
 
-    @Override
-    public List<CookBook> findMainCook() {
-        return cookBookDao.findMainCook();
-    }
 
     @Override
     public List<CookBook> findCookIntroduce(Integer id) {

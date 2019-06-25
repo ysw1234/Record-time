@@ -28,17 +28,7 @@ public class CookBookController {
         return new JsonBean(1,list);
     }
 
-    @RequestMapping("/mainCookList.do")
-    public JsonBean findMainCook(){
-        List<CookBook> list = cookBookService.findMainCook();
-        return new JsonBean(1,list);
-    }
 
-    @RequestMapping("/mainCook.do")
-    public JsonBean findCookIntroduce(Integer id){
-        List<CookBook> list = cookBookService.findCookIntroduce(id);
-        return new JsonBean(1,list);
-    }
 
 
 }

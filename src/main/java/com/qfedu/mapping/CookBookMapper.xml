@@ -26,13 +26,5 @@
         inner join t_comment m on c.id=m.cid where c.id=#{id}
     </select>
 
-    <select id="findMainCook" resultMap="cookBookMap">
-        select id,title,intro,pic from t_cookbook
-    </select>
-
-    <select id="findMainCookIntroduce" parameterType="int" resultMap="cookBookMap">
-        select c.id,c.main,c.pic,m.id as mid,m.commenttop,m.commentmiddle,m.commentdwon from t_cookbook c
-        inner join t_comment m on c.id=m.cid where c.id=#{id}
-    </select>
 
 </mapper>

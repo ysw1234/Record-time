@@ -10,7 +10,5 @@ public interface CookBookService {
 
     List<CookBook> findMain(Integer id);
 
-    List<CookBook> findMainCook();
-
     List<CookBook> findCookIntroduce(Integer id);
 }

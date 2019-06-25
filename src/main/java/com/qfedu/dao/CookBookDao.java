@@ -12,7 +12,5 @@ public interface CookBookDao {
 
     List<CookBook> findMain(Integer id);
 
-    List<CookBook> findMainCook();
-
     List<CookBook> findMainCookIntroduce(Integer id);
 }
