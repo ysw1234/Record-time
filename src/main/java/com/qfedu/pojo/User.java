@@ -11,7 +11,24 @@ public class User {
     private Integer focuscount;
     private Integer fanscount;
     private String headphoto;
+    private String babyname;
+    private Integer babyage;
 
+    public String getBabyname() {
+        return babyname;
+    }
+
+    public void setBabyname(String babyname) {
+        this.babyname = babyname;
+    }
+
+    public Integer getBabyage() {
+        return babyage;
+    }
+
+    public void setBabyage(Integer babyage) {
+        this.babyage = babyage;
+    }
 
     public String getHeadphoto() {
         return headphoto;

@@ -33,6 +33,6 @@ public class FocusServiceImpl implements FocusService {
 
     @Override
     public List<Ariticle> selectAllAriticle(Integer id) {
-        return null;
+        return focusDao.selectAllAriticle(id);
     }
 }
