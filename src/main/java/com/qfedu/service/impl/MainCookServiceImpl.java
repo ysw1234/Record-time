@@ -18,8 +18,8 @@ public class MainCookServiceImpl implements MainCookService {
 
 
     @Override
-    public List<MainCook> findMainCook() {
-        return mainCookDao.findMainCook();
+    public List<MainCook> findMainCook(Integer id) {
+        return mainCookDao.findMainCook(id);
     }
 
     @Override

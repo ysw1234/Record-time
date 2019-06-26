@@ -18,8 +18,8 @@ public class MainCookController {
     private MainCookService mainCookService;
 
     @RequestMapping("/findMainCook")
-    public JsonBean findMainCook(){
-        List<MainCook> list = mainCookService.findMainCook();
+    public JsonBean findMainCook(Integer id){
+        List<MainCook> list = mainCookService.findMainCook(id);
         return new JsonBean(1,list);
     }
 

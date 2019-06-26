@@ -9,7 +9,7 @@ import java.util.List;
  * Created by Administrator on 2019/6/25 0025.
  */
 public interface MainCookService {
-    List<MainCook> findMainCook();
+    List<MainCook> findMainCook(Integer id);
 
     List<MainCook> findCookIntroduce(Integer id);
 }

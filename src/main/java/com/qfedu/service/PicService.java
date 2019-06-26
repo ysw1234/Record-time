@@ -9,4 +9,6 @@ public interface PicService {
     List<Pic> findPicShow();
 
     List<Pic> findCookShow();
+
+    List<Pic> findEatPic();
 }
