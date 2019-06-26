@@ -1,5 +1,7 @@
 package com.qfedu.pojo;
 
+import java.util.Date;
+
 /**
  * Created by Winchester on 2019/6/22.
  */
@@ -8,7 +10,24 @@ public class Ariticle {
     private Integer aid;
     private String article;
     private Integer uid;
+    private String apic;
+    private Date createtime;
 
+    public Date getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
+    }
+
+    public String getApic() {
+        return apic;
+    }
+
+    public void setApic(String apic) {
+        this.apic = apic;
+    }
 
     public Integer getAid() {
         return aid;
@@ -41,6 +60,8 @@ public class Ariticle {
                 "aid=" + aid +
                 ", article='" + article + '\'' +
                 ", uid=" + uid +
+                ", apic='" + apic + '\'' +
+                ", createtime=" + createtime +
                 '}';
     }
 }

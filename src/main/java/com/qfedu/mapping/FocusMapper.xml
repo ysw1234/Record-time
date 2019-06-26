@@ -18,19 +18,28 @@
             <result column="headphoto" property="headphoto"></result>
             <result column="babyname" property="babyname"></result>
             <result column="babyage" property="babyage"></result>
-            
-            <collection property="ariticleList" ofType="com.qfedu.pojo.Ariticle">
-
-                <id column="aid" property="aid"></id>
-                <result column="article" property="article"></result>
-                <result column="uid" property="uid"></result>
-
-            </collection>
+            <result column="nickname" property="nickname"></result>
+            <association property="ariticle" resultMap="ariticleMap"></association>
 
         </resultMap>
 
+    <resultMap id="ariticleMap" type="com.qfedu.pojo.Ariticle">
 
-    <select id="selectAllUser" parameterType="Integer" resultMap="com.qfedu.dao.UserDao.userMap">
+        <id column="aid" property="aid"></id>
+        <result column="article" property="article"></result>
+        <result column="uid" property="uid"></result>
+        <result column="apic" property="apic"></result>
+        <result column="createtime" property="createtime"></result>
+
+    </resultMap>
+
+    <resultMap id="cpicMap" type="com.qfedu.pojo.Cpic">
+        <id column="pid" property="picpath"></id>
+        <result column="picpath" property="picpath"></result>
+    </resultMap>
+
+
+    <select id="selectAllUser" parameterType="Integer" resultMap="userResultMap">
         select * from t_user where not id = #{id}
     </select>
 
@@ -39,10 +48,12 @@
     </insert>
 
     <select id="selectAllAriticle" parameterType="Integer" resultMap="userResultMap">
-        select u.username,u.babyname,u.babyage,a.article from t_user u INNER JOIN t_focus f on u.id = f.puid INNER JOIN
+        select u.username,u.babyname,u.babyage,u.headphoto,u.nickname,a.article,a.apic,a.createtime from t_user u INNER JOIN t_focus f on u.id = f.puid INNER JOIN
 t_article a on f.cuid = a.uid where u.id = 1
     </select>
 
-
+    <select id="selectCPic" resultMap="cpicMap">
+        select * from t_cpic
+    </select>
 
 </mapper>

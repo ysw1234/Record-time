@@ -11,13 +11,20 @@ import java.util.List;
 public class UserVo extends User {
 
 
-    private List<Ariticle>  ariticleList;
+    private Ariticle ariticle;
 
-    public List<Ariticle> getAriticleList() {
-        return ariticleList;
+    public Ariticle getAriticle() {
+        return ariticle;
     }
 
-    public void setAriticleList(List<Ariticle> ariticleList) {
-        this.ariticleList = ariticleList;
+    public void setAriticle(Ariticle ariticle) {
+        this.ariticle = ariticle;
+    }
+
+    @Override
+    public String toString() {
+        return "UserVo{" +
+                "ariticle=" + ariticle +
+                '}';
     }
 }

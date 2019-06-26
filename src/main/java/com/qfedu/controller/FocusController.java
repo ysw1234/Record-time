@@ -1,9 +1,11 @@
 package com.qfedu.controller;
 
 import com.qfedu.pojo.Ariticle;
+import com.qfedu.pojo.Cpic;
 import com.qfedu.pojo.User;
 import com.qfedu.service.FocusService;
 import com.qfedu.vo.JsonBean;
+import com.qfedu.vo.UserVo;
 import com.qiniu.util.Json;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Winchester on 2019/6/22.
@@ -42,11 +45,28 @@ public class FocusController {
 
     @RequestMapping("/ariticle.do")
     @ResponseBody
-    public JsonBean selectAllAriticle(HttpServletRequest request){
-        User user = (User) request.getSession().getAttribute("user");
-        Integer id = user.getId();
-        List<Ariticle> list = focusService.selectAllAriticle(id);
+    public JsonBean selectAllAriticle(Integer page,Integer limit,Integer id,HttpServletRequest request){
+        //User user = (User) request.getSession().getAttribute("user");
+        //Integer id = user.getId();
+        //List<UserVo> list = focusService.selectAllAriticle(id);
+        Map<String,Object> map = focusService.selectAllAriticleByPage(id,page,limit);
+        return new JsonBean(1,map);
+    }
+
+    @RequestMapping("/selectCPic.do")
+    @ResponseBody
+    public JsonBean selectCPic(){
+        List<Cpic> list = focusService.selectCPic();
         return new JsonBean(1,list);
     }
 
+    @RequestMapping("/cariticle.do")
+    @ResponseBody
+    public JsonBean selectCAriticle(Integer page,Integer limit,Integer id,HttpServletRequest request){
+        //User user = (User) request.getSession().getAttribute("user");
+        //Integer id = user.getId();
+        //List<UserVo> list = focusService.selectAllAriticle(id);
+        Map<String,Object> map = focusService.selectAllAriticleByPage(id,page,limit);
+        return new JsonBean(1,map);
+    }
 }

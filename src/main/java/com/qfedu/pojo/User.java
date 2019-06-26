@@ -13,6 +13,15 @@ public class User {
     private String headphoto;
     private String babyname;
     private Integer babyage;
+    private String nickname;
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
 
     public String getBabyname() {
         return babyname;
@@ -92,5 +101,22 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", focuscount=" + focuscount +
+                ", fanscount=" + fanscount +
+                ", headphoto='" + headphoto + '\'' +
+                ", babyname='" + babyname + '\'' +
+                ", babyage=" + babyage +
+                ", nickname='" + nickname + '\'' +
+                '}';
     }
 }
