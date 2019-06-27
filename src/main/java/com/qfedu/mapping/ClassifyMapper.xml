@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.dao.ClassifyDao">
+    <resultMap id="classifyMap" type="com.qfedu.pojo.Classify">
+        <id column="id" property="id"></id>
+        <result column="classifyname" property="classifyName"></result>
+        <result column="pic" property="pic"></result>
+    </resultMap>
+
+   <select id="findClassify" resultMap="classifyMap">
+       select * from t_classify
+   </select>
+
+</mapper>

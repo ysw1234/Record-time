@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.dao.PabulumDao">
+    <resultMap id="pabulumMap" type="com.qfedu.pojo.Pabulum">
+        <id column="id" property="id"></id>
+        <result column="cookname" property="cookName"></result>
+        <result column="cookintro" property="cookIntro"></result>
+        <result column="cookoffer" property="cookOffer"></result>
+        <result column="sid" property="sid"></result>
+        <result column="typeid" property="typeId"></result>
+
+    </resultMap>
+
+    <select id="findPabulum" resultMap="pabulumMap">
+        select * from t_pabulum where sid=#{id} and typeid=#{tid}
+    </select>
+
+</mapper>

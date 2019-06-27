@@ -29,9 +29,6 @@ public class PicController {
         return new JsonBean(1,list);
     }
 
-    @RequestMapping("/caneat")
-    public JsonBean eatpic(){
-        List<Pic> list = picService.findEatPic();
-        return new JsonBean(1,list);
-    }
+
+
 }

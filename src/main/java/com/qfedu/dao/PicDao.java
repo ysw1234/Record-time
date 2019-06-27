@@ -12,5 +12,5 @@ public interface PicDao {
 
     List<Pic> findCookShow();
 
-    List<Pic> findEatPic();
+
 }

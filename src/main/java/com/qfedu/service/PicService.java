@@ -10,5 +10,4 @@ public interface PicService {
 
     List<Pic> findCookShow();
 
-    List<Pic> findEatPic();
 }

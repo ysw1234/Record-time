@@ -16,8 +16,4 @@
         select * from t_pic where pictype=2
     </select>
 
-    <select id="findEatPic" resultMap="picMap">
-        select *  from t_pic where pictype=3
-    </select>
-
 </mapper>
