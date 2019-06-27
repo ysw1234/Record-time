@@ -14,6 +14,15 @@ public class User {
     private String babyname;
     private Integer babyage;
     private String nickname;
+    private String userdescribe;
+
+    public String getUserdescribe() {
+        return userdescribe;
+    }
+
+    public void setUserdescribe(String userdescribe) {
+        this.userdescribe = userdescribe;
+    }
 
     public String getNickname() {
         return nickname;

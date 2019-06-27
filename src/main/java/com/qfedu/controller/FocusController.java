@@ -1,5 +1,7 @@
 package com.qfedu.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.JsonArray;
 import com.qfedu.pojo.Ariticle;
 import com.qfedu.pojo.Cpic;
 import com.qfedu.pojo.User;
@@ -9,10 +11,12 @@ import com.qfedu.vo.UserVo;
 import com.qiniu.util.Json;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -37,9 +41,13 @@ public class FocusController {
 
     @RequestMapping("/addFocus.do")
     @ResponseBody
-    public JsonBean addFocus(String[] ids, HttpServletRequest request){
+    public JsonBean addFocus(Integer id, HttpServletRequest request){
+        //System.out.println(Arrays.toString(ids));
+        String ids = request.getParameter("ids");
+        System.out.println(ids);
+        ObjectMapper mapper = new ObjectMapper();
         User user = (User) request.getSession().getAttribute("user");
-        focusService.addFocus(user.getId(),ids);
+        //focusService.addFocus(id,ids);
         return new JsonBean(1,"添加关注成功");
     }
 

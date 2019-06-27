@@ -19,6 +19,7 @@
             <result column="babyname" property="babyname"></result>
             <result column="babyage" property="babyage"></result>
             <result column="nickname" property="nickname"></result>
+            <result column="userdescribe" property="userdescribe"></result>
             <association property="ariticle" resultMap="ariticleMap"></association>
 
         </resultMap>
@@ -34,7 +35,7 @@
     </resultMap>
 
     <resultMap id="cpicMap" type="com.qfedu.pojo.Cpic">
-        <id column="pid" property="picpath"></id>
+        <id column="pid" property="pid"></id>
         <result column="picpath" property="picpath"></result>
     </resultMap>
 
