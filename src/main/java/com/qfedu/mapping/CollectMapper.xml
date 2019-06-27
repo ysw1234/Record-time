@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.dao.CollectDao">
+    <resultMap id="collectMap" type="com.qfedu.pojo.Collect">
+        <id column="id" property="id"></id>
+        <result column="title" property="title"></result>
+        <result column="intro" property="intro"></result>
+        <result column="suggest" property="suggest"></result>
+        <result column="major" property="major"></result>
+        <result column="pic" property="pic"></result>
+
+        <collection property="commentList" ofType="com.qfedu.pojo.Comment">
+            <id column="mid" property="id"></id>
+            <result column="commenttop" property="commenttop"></result>
+            <result column="commentmiddle" property="commentmiddle"></result>
+            <result column="commentdwon" property="commentdwon"></result>
+        </collection>
+    </resultMap>
+
+    <select id="findCollect" resultMap="collectMap">
+        select * from t_collect
+    </select>
+
+    <select id="findAll" parameterType="int" resultMap="collectMap">
+        select c.id,c.major,c.pic,m.id as mid,m.commenttop,m.commentmiddle,m.commentdwon from t_collect c
+        inner join t_comment m on c.id=m.cid where c.id=#{id}
+    </select>
+</mapper>
