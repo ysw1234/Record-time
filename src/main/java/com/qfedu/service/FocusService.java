@@ -14,7 +14,7 @@ import java.util.Map;
 public interface FocusService {
     List<User> selectAllUser(Integer id);
 
-    void addFocus(Integer id,String[] ids);
+    void addFocus(Integer id,char[] ids);
 
     List<UserVo> selectAllAriticle(Integer id);
 

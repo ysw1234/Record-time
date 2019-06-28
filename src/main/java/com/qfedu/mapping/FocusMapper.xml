@@ -49,7 +49,7 @@
     </insert>
 
     <select id="selectAllAriticle" parameterType="Integer" resultMap="userResultMap">
-        select u.username,u.babyname,u.babyage,u.headphoto,u.nickname,a.article,a.apic,a.createtime from t_user u INNER JOIN t_focus f on u.id = f.puid INNER JOIN
+        select DISTINCT u.username,u.babyname,u.babyage,u.headphoto,u.nickname,a.article,a.apic,a.createtime from t_user u INNER JOIN t_focus f on u.id = f.puid INNER JOIN
 t_article a on f.cuid = a.uid where u.id = 1
     </select>
 

@@ -31,9 +31,9 @@ public class FocusServiceImpl implements FocusService {
     }
 
     @Override
-    public void addFocus(Integer uid,String[] ids) {
-        for (String id:ids) {
-            focusDao.addFocus(uid,Integer.parseInt(id));
+    public void addFocus(Integer uid,char[] ids) {
+        for (char id:ids) {
+            focusDao.addFocus(uid,Integer.parseInt(id+""));
         }
     }
 

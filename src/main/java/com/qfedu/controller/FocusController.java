@@ -43,11 +43,27 @@ public class FocusController {
     @ResponseBody
     public JsonBean addFocus(Integer id, HttpServletRequest request){
         //System.out.println(Arrays.toString(ids));
-        String ids = request.getParameter("ids");
-        System.out.println(ids);
-        ObjectMapper mapper = new ObjectMapper();
+        String str = request.getParameter("ids");
+        str = str.substring(1,str.length()-1);
+        System.out.println(str);
+        String[] s = str.split(",");
+        for (String s1:s){
+            System.out.println(s1);
+        }
+        String ss = "";
+        for(int i = 0;i<s.length;i++){
+            //System.out.println(s[i]);
+            char[] chars = s[i].toCharArray();
+            System.out.println(chars[4]);
+            ss = ss + chars[4];
+        }
+        System.out.println(ss);
+        char[] ids = ss.toCharArray();
+        System.out.println(Arrays.toString(ids));
+
+
         User user = (User) request.getSession().getAttribute("user");
-        //focusService.addFocus(id,ids);
+        focusService.addFocus(id,ids);
         return new JsonBean(1,"添加关注成功");
     }
 

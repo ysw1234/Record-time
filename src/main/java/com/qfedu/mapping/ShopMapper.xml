@@ -5,4 +5,18 @@
 
         <mapper namespace="com.qfedu.dao.ShopDao">
 
+        <resultMap id="shoptoppicMap" type="com.qfedu.pojo.ShopTopPic">
+
+                <id column="toppid" property="toppid"></id>
+                <result column="toppicpath" property="toppicpath"></result>
+
+        </resultMap>
+
+
+
+        <select id="selectShoptoppic" resultMap="shoptoppicMap">
+                SELECT * FROM t_shoptoppic
+        </select>
+
+
 </mapper>
