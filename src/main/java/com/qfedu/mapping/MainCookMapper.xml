@@ -21,7 +21,7 @@
 
 
     <select id="findMainCook" parameterType="int" resultMap="mainCookMap">
-        select id,cookname,offer,content,pic from t_maincook where pid=#{id}
+        select id,cookname,offer,content,pic from t_maincook where cid=#{id}
     </select>
 
 
