@@ -12,10 +12,44 @@
 
         </resultMap>
 
+        <resultMap id="commodityvoMap" type="com.qfedu.vo.CommodityVo">
+
+                <id column="cid" property="cid"></id>
+                <result column="commodity" property="commodity"></result>
+                <result column="price" property="price"></result>
+                <result column="goodreputation" property="goodreputation"></result>
+                <result column="vipprice" property="vipprice"></result>
+                <result column="cpic" property="cpic"></result>
+                <result column="cdescription" property="cdescription"></result>
+                <result column="c_comm" property="c_comm"></result>
+                <association property="user" resultMap="com.qfedu.dao.UserDao.userMap"></association>
+
+        </resultMap>
+
+        <resultMap id="slideshowMap" type="com.qfedu.pojo.Slideshow">
+
+                <id column="sid" property="sid"></id>
+                <result column="spath" property="spath"></result>
+
+        </resultMap>
+
 
 
         <select id="selectShoptoppic" resultMap="shoptoppicMap">
                 SELECT * FROM t_shoptoppic
+        </select>
+
+        <select id="selectAllCommodity" resultMap="commodityvoMap">
+                select * from t_commodity
+        </select>
+
+        <select id="selectDetailById" parameterType="Integer" resultMap="commodityvoMap">
+              select c.price,c.vipprice,c.goodreputation,u.nickname,cc.c_comm from t_commodity c INNER JOIN t_user_comment uc on c.cid = uc.ccid INNER JOIN
+t_user u on uc.uid = u.id INNER JOIN t_commodity_comm cc on u.id = cc.ccid where c.cid = 1
+        </select>
+
+        <select id="selectSlideshow" resultMap="slideshowMap">
+                select * from t_commodity_slideshow
         </select>
 
 

@@ -1,6 +1,7 @@
 package com.qfedu.service;
 
 import com.qfedu.pojo.ShopTopPic;
+import com.qfedu.pojo.Slideshow;
 import com.qfedu.vo.CommodityVo;
 
 import java.util.List;
@@ -14,4 +15,8 @@ public interface ShopService {
 
 
     Map<String,Object> findByPage(Integer page, Integer limit);
+
+    CommodityVo selectDetailById(Integer id);
+
+    List<Slideshow> selectSlideshow();
 }

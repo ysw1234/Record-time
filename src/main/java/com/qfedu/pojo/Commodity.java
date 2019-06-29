@@ -6,12 +6,20 @@ package com.qfedu.pojo;
 public class Commodity {
 
     private Integer cid;
+    private String commodity;
     private Integer price;
     private String goodreputation;
     private Integer vipprice;
     private String cpic;
     private String cdescription;
 
+    public String getCommodity() {
+        return commodity;
+    }
+
+    public void setCommodity(String commodity) {
+        this.commodity = commodity;
+    }
 
     public Integer getCid() {
         return cid;
@@ -65,6 +73,7 @@ public class Commodity {
     public String toString() {
         return "Commodity{" +
                 "cid=" + cid +
+                ", commodity='" + commodity + '\'' +
                 ", price=" + price +
                 ", goodreputation='" + goodreputation + '\'' +
                 ", vipprice=" + vipprice +

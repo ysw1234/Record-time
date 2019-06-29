@@ -2,6 +2,7 @@ package com.qfedu.controller;
 
 import com.qfedu.pojo.Commodity;
 import com.qfedu.pojo.ShopTopPic;
+import com.qfedu.pojo.Slideshow;
 import com.qfedu.service.ShopService;
 import com.qfedu.vo.CommodityVo;
 import com.qfedu.vo.JsonBean;
@@ -37,6 +38,24 @@ public class ShopController {
         Map<String,Object> map = shopService.findByPage(page,limit);
         return new JsonBean(1,map);
     }
+
+    @RequestMapping("/selectDetailById.do")
+    @ResponseBody
+    public JsonBean selectDetailById(Integer id){
+        CommodityVo commodityVo = shopService.selectDetailById(id);
+        System.out.println("++++++++"+commodityVo);
+        return new JsonBean(1,commodityVo);
+    }
+
+
+    @RequestMapping("/slideshow.do")
+    @ResponseBody
+    public JsonBean selectSlideshow(){
+        List<Slideshow> list = shopService.selectSlideshow();
+        return new JsonBean(1,list);
+    }
+
+    
 
 
 

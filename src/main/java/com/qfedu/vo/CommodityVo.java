@@ -9,6 +9,15 @@ import com.qfedu.pojo.User;
 public class CommodityVo extends Commodity {
 
     private User user;
+    private String c_comm;
+
+    public String getC_comm() {
+        return c_comm;
+    }
+
+    public void setC_comm(String c_comm) {
+        this.c_comm = c_comm;
+    }
 
     public User getUser() {
         return user;
@@ -17,4 +26,7 @@ public class CommodityVo extends Commodity {
     public void setUser(User user) {
         this.user = user;
     }
+
+
+
 }

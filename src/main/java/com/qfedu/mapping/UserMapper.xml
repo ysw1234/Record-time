@@ -11,6 +11,7 @@
         <result column="focuscount" property="focuscount"></result>
         <result column="fanscount" property="fanscount"></result>
         <result column="headphoto" property="headphoto"></result>
+        <result column="nickname" property="nickname"></result>
     </resultMap>
 
     <select id="findUser" resultMap="userMap">

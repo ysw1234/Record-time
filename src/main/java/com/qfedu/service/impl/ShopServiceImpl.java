@@ -4,6 +4,7 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.qfedu.dao.ShopDao;
 import com.qfedu.pojo.ShopTopPic;
+import com.qfedu.pojo.Slideshow;
 import com.qfedu.service.ShopService;
 import com.qfedu.vo.CommodityVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,16 @@ public class ShopServiceImpl implements ShopService {
         map.put("pageList",list);
         map.put("currentPage",page);
         return map;
+    }
+
+    @Override
+    public CommodityVo selectDetailById(Integer id) {
+        return shopDao.selectDetailById(id);
+    }
+
+    @Override
+    public List<Slideshow> selectSlideshow() {
+        return shopDao.selectSlideshow();
     }
 
 

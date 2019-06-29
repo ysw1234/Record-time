@@ -1,6 +1,7 @@
 package com.qfedu.dao;
 
 import com.qfedu.pojo.ShopTopPic;
+import com.qfedu.pojo.Slideshow;
 import com.qfedu.vo.CommodityVo;
 
 import java.util.List;
@@ -12,4 +13,8 @@ public interface ShopDao {
     List<ShopTopPic> selectShoptoppic();
 
     List<CommodityVo> selectAllCommodity();
+
+    CommodityVo selectDetailById(Integer id);
+
+    List<Slideshow> selectSlideshow();
 }
