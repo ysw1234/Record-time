@@ -12,6 +12,15 @@ public class Commodity {
     private Integer vipprice;
     private String cpic;
     private String cdescription;
+    private Integer count;
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
 
     public String getCommodity() {
         return commodity;
@@ -79,6 +88,7 @@ public class Commodity {
                 ", vipprice=" + vipprice +
                 ", cpic='" + cpic + '\'' +
                 ", cdescription='" + cdescription + '\'' +
+                ", count=" + count +
                 '}';
     }
 }

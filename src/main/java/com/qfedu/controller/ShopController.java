@@ -55,7 +55,12 @@ public class ShopController {
         return new JsonBean(1,list);
     }
 
-    
+    @RequestMapping("/selectCommodityById.do")
+    @ResponseBody
+    public JsonBean selectCommodityById(Integer id){
+        CommodityVo commodityVo = shopService.selectCommodityById(id);
+        return new JsonBean(1,commodityVo);
+    }
 
 
 

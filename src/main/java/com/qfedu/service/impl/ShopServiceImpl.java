@@ -53,5 +53,10 @@ public class ShopServiceImpl implements ShopService {
         return shopDao.selectSlideshow();
     }
 
+    @Override
+    public CommodityVo selectCommodityById(Integer id) {
+        return shopDao.selectCommodityById(id);
+    }
+
 
 }

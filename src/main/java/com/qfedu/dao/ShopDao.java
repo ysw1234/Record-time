@@ -17,4 +17,6 @@ public interface ShopDao {
     CommodityVo selectDetailById(Integer id);
 
     List<Slideshow> selectSlideshow();
+
+    CommodityVo selectCommodityById(Integer id);
 }

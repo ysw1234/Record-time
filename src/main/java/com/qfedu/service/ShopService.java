@@ -19,4 +19,6 @@ public interface ShopService {
     CommodityVo selectDetailById(Integer id);
 
     List<Slideshow> selectSlideshow();
+
+    CommodityVo selectCommodityById(Integer id);
 }

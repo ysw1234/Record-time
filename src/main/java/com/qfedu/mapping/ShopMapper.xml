@@ -22,7 +22,13 @@
                 <result column="cpic" property="cpic"></result>
                 <result column="cdescription" property="cdescription"></result>
                 <result column="c_comm" property="c_comm"></result>
+                <result column="count" property="count"></result>
                 <association property="user" resultMap="com.qfedu.dao.UserDao.userMap"></association>
+                <collection property="colorList" ofType="com.qfedu.pojo.Color">
+                        <id column="colorid" property="colorid"></id>
+                        <result column="color" property="color"></result>
+                        <result column="ccid" property="ccid"></result>
+                </collection>
 
         </resultMap>
 
@@ -32,6 +38,13 @@
                 <result column="spath" property="spath"></result>
 
         </resultMap>
+
+        <resultMap id="colorMap" type="com.qfedu.pojo.Color">
+                <id column="colorid" property="colorid"></id>
+                <result column="color" property="color"></result>
+                <result column="ccid" property="ccid"></result>
+        </resultMap>
+
 
 
 
@@ -44,13 +57,18 @@
         </select>
 
         <select id="selectDetailById" parameterType="Integer" resultMap="commodityvoMap">
-              select c.price,c.vipprice,c.goodreputation,u.nickname,cc.c_comm from t_commodity c INNER JOIN t_user_comment uc on c.cid = uc.ccid INNER JOIN
-t_user u on uc.uid = u.id INNER JOIN t_commodity_comm cc on u.id = cc.ccid where c.cid = 1
+              select c.cid,c.price,c.vipprice,c.goodreputation,u.nickname,cc.c_comm from t_commodity c INNER JOIN t_user_comment uc on c.cid = uc.ccid INNER JOIN
+t_user u on uc.uid = u.id INNER JOIN t_commodity_comm cc on u.id = cc.ccid where c.cid = #{id}
         </select>
 
         <select id="selectSlideshow" resultMap="slideshowMap">
                 select * from t_commodity_slideshow
         </select>
+
+        <select id="selectCommodityById" resultMap="commodityvoMap">
+                select c.cid,c.cpic,c.commodity,c.count,c.price,co.color,co.colorid from t_commodity c INNER JOIN t_color co on c.cid = co.ccid where c.cid =#{id}
+        </select>
+
 
 
 </mapper>
